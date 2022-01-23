@@ -1,6 +1,5 @@
 from aiohttp import web
-from main import *
-from main import *
+from parser import *
 import aiohttp_jinja2
 import jinja2
 
@@ -10,7 +9,7 @@ aiohttp_jinja2.setup(app,
 
 @aiohttp_jinja2.template('index.html')
 def handler(request):
-    return {'title':'Vacancies','content':data_for_server}
+    return {'title':'Vacancies','content':data_from_server}
 
 app.add_routes([web.get('/', handler)])
 
